@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Author: YOUR NAME | Date: 2026/07/27 -->
+   <meta charset="UTF-8">
+   <title>M Fragrance | Order Confirmation</title>
+   <style>
+     body{font-family:Arial; background:#fdf6ec; padding:20px;}
+     table{width:100%; border-collapse:collapse; margin:20px 0;}
+     th,td{border:1px solid #ddd; padding:8px;}
+     th{background:#4d3319; color:white;}
+     .action { background: #4d3319; color: white; border: none; padding: 10px 20px; margin:5px; cursor: pointer; }
+   </style>
+</head>
+<body>
+<h2>Order Confirmation</h2>
+<img src="images/logo.jpeg" alt="M Fragrance Logo"  style="width:120px; margin:15px 0; display:block;">
+<div id="customerDetails"></div>
+<h3>Order Summary</h3>
+<table id="orderTable">
+  <thead><tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th></tr></thead>
+  <tbody></tbody>
+  <tfoot>
+    <tr><td colspan="3">Subtotal</td><td id="subtotal">R0.00</td></tr>
+    <tr><td colspan="3">VAT 15%</td><td id="vat">R0.00</td></tr>
+    <tr><td colspan="3">TOTAL</td><td id="total">R0.00</td></tr>
+  </tfoot>
+</table>
+<button class="action" onclick="window.history.back()">Back & Edit</button>
+<button class="action" onclick="confirmOrder()">Confirm Order</button>
+<button class="action" onclick="clearOrder()">Clear Order</button>
+<script>
+let params = new URLSearchParams(location.search);
+let custHTML = "<h3>Customer Details</h3>";
+['prefName','surname','idNum','phone','email','shippingStreet','cardName','cardType','cardNum'].forEach(f=>{
+  let val = params.get(f) || '';
+  if(f==='idNum') val = val.slice(0,4) + '*********';
+  if(f==='cardNum') val = '************' + val.slice(-4);
+  custHTML += `<p><b>${f}:</b> ${val}</p>`;
+});
+document.getElementById('customerDetails').innerHTML = custHTML;
+
+let subtotal = 0; let tbody = document.querySelector('#orderTable tbody');
+params.getAll('product').forEach(p => {
+  let [name, price] = p.split('|'); let qty = parseInt(params.get('qty_' + name)) || 0;
+  if(qty > 0){ let total = price * qty; subtotal += total;
+    tbody.innerHTML += `<tr><td>${name}</td><td>R${price}</td><td>${qty}</td><td>R${total.toFixed(2)}</td></tr>`;
+  }
+});
+let vat = subtotal * 0.15; let total = subtotal + vat;
+document.getElementById('subtotal').textContent = 'R' + subtotal.toFixed(2);
+document.getElementById('vat').textContent = 'R' + vat.toFixed(2);
+document.getElementById('total').textContent = 'R' + total.toFixed(2);
+
+function confirmOrder(){ window.location.href = 'receipt.html?' + params.toString() + '&total=R' + total.toFixed(2); }
+function clearOrder(){ window.location.href = 'products.html'; }
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>M Fragrance | Home</title>
+   <style>
+     *{margin:0; padding:0; box-sizing:border-box;}
+     body{font-family:Arial; background:#fdf6ec; color:#333; line-height:1.6;}
+     
+     /* HEADER & NAV */
+     .header-top{
+       background:#4d3319; 
+       color:white; 
+       text-align:center; 
+       padding:20px 0;
+       font-size:28px;
+       letter-spacing:4px;
+       text-transform:uppercase;
+       font-weight:bold;
+     }
+     nav{
+       background:#000;
+       width:100%;
+     }
+     nav ul{
+       list-style:none;
+       display:flex;
+       justify-content:flex-start;
+       padding:0 30px;
+       flex-wrap:wrap;
+     }
+     nav ul li a{
+       color:white;
+       text-decoration:none;
+       font-weight:bold;
+       padding:15px 20px;
+       display:block;
+       transition:0.3s;
+     }
+     nav ul li a:hover{
+       background:#333;
+       color:#ffd700;
+     }
+
+     /* MAIN */
+     main { padding: 30px 5%; background: white; }
+     main h2 { color:#4d3319; text-align:center; margin-bottom:20px; }
+     main h3 { color:#4d3319; margin:20px 0 10px 0; }
+     main img{ display:block; margin: 15px auto; }
+
+     /* CONTACT LINKS */
+     .tel-link { color: #4d3319; font-weight: bold; text-decoration: none; }
+     .tel-link:hover { text-decoration: underline; }
+     main a { color: #4d3319; }
+
+     /* HOURS LIST */
+     ul.hours { list-style: none; padding-left: 0; }
+     ul.hours li { padding: 5px 0; border-bottom: 1px dashed #ddd; }
+
+     /* MAP */
+     .map { 
+       width: 100%; 
+       height: 300px; 
+       border: 0; 
+       border-radius: 8px; 
+       margin-top: 20px;
+     }
+
+     /* FOOTER - NOW BLACK */
+     footer { 
+       background: #000; /* Changed to black */
+       color: white; 
+       text-align: center; 
+       padding: 18px; 
+       margin-top: 30px; 
+     }
+     footer a { 
+       color: #ffd700; /* Gold links */
+       text-decoration: none; 
+       margin: 0 5px; 
+     }
+     footer a:hover { text-decoration: underline; }
+
+     /* MOBILE */
+     @media screen and (max-width: 768px){
+       .header-top { font-size: 1.5rem; }
+       nav ul { justify-content: center; padding: 0; }
+       nav a { padding: 10px 12px; font-size: 0.85rem; }
+     }
+   </style>
+</head>
+<body>
+
+<header>
+   <div class="header-top">
+      M Fragrance
+   </div>
+   <nav>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="products.html">Products</a></li>
+         <li><a href="clientRegistrationForm.html">Registration</a></li>
+         <li><a href="staff.html">Staff</a></li>
+         <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- 7b. LOGO BELOW HEADING -->
+  <img src="images/logo.jpeg" alt="M Fragrance Logo" style="width:120px; margin:15px 0; display:block;">
+  
+  <h2>Contact Us</h2>
+  
+  <!-- PHONE + EMAIL + ADDRESS - ALL LINKED -->
+  <p><strong>Phone:</strong> <a href="tel:+27765568256">+27 76 556 8256</a></p>
+  <p><strong>Email:</strong> <a href="mailto:mohaumia@gmail.com">mohaumia@gmail.com</a></p>
+  <p><strong>Address:</strong> 
+    <a href="https://www.google.com/maps/search/?api=1&query=7915+Mmopa+Crescent+Olivenhoutbosch+0875" 
+       target="_blank">7915 Mmopa Crescent, Olivenhoutbosch 0875</a>
+  </p>
+
+  <!-- BUSINESS HOURS -->
+  <h3>Business Hours</h3>
+  <ul class="hours">
+    <li>Mon-Fri: 09:00 - 17:00</li>
+    <li>Saturday: 09:00 - 13:00</li>
+    <li>Sunday: Closed</li>
+  </ul>
+
+  <!-- EMBEDDED MAP -->
+  <iframe class="map" 
+    src="https://www.google.com/maps?q=7915+Mmopa+Crescent+Olivenhoutbosch+0875&output=embed" 
+    loading="lazy" 
+    title="M Fragrance Map">
+  </iframe>
+</main>
+
+<footer>
+  <p>&copy; 2026 M Fragrance. All Rights Reserved. 
+     <a class="tel-link" href="tel:+27765568256">📞 +27 76 556 8256</a> | 
+     <a href="mailto:mohaumia@gmail.com">✉ mohaumia@gmail.com</a>
+  </p>
+</footer>
+</body>
+</html>

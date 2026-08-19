@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Author: YOUR NAME | Date: 2026/07/27 -->
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>M Fragrance | Official Receipt</title>
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         background: #fdf6ec;
+         margin: 0;
+         padding: 0;
+         color: #333;
+      }
+     .container {
+         max-width: 700px;
+         margin: 30px auto;
+         background: #fff;
+         border: 1px solid #e0d3c3;
+         border-radius: 10px;
+         box-shadow: 0 4px 12px rgba(0,0,0.08);
+         overflow: hidden;
+      }
+      header {
+         background: #2d2a26;
+         color: #fff;
+         text-align: center;
+         padding: 25px 20px;
+      }
+      header img {
+         width: 120px;
+         margin-bottom: 10px;
+      }
+      header h1 {
+         margin: 0;
+         font-size: 24px;
+         letter-spacing: 1px;
+      }
+     .receipt-body {
+         padding: 25px 30px;
+      }
+     .receipt-body h2 {
+         color: #2d2a26;
+         border-bottom: 2px solid #e0d3c3;
+         padding-bottom: 8px;
+         margin-bottom: 20px;
+      }
+     .info-grid {
+         display: grid;
+         grid-template-columns: 150px 1fr;
+         gap: 12px 20px;
+         margin-bottom: 25px;
+      }
+     .info-grid b {
+         color: #555;
+      }
+      table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 15px;
+      }
+      table th {
+         background: #f5e9dc;
+         text-align: left;
+         padding: 10px;
+         font-size: 14px;
+      }
+      table td {
+         padding: 12px 10px;
+         border-bottom: 1px solid #eee;
+      }
+     .total-row td {
+         font-weight: bold;
+         font-size: 16px;
+         background: #fdf6ec;
+      }
+      footer {
+         background: #2d2a26;
+         color: #ddd;
+         padding: 20px 30px;
+         font-size: 13px;
+      }
+      footer h3 {
+         margin-top: 0;
+         color: #fff;
+         font-size: 15px;
+      }
+     .footer-grid {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 20px;
+      }
+     .note {
+         text-align: center;
+         font-size: 12px;
+         margin-top: 15px;
+         color: #aaa;
+      }
+   </style>
+</head>
+<body>
+<div class="container">
+   <header>
+    <img src="images/logo.jpeg" alt="M Fragrance Logo">
+
+      <p>Luxury Scents, Delivered</p>
+   </header>
+
+   <div class="receipt-body">
+      <h2>Official Receipt</h2>
+
+      <div class="info-grid">
+         <b>Preferred Name:</b> <span id="prefName"></span>
+         <b>Surname:</b> <span id="surname"></span>
+         <b>Cell Number:</b> <span id="phone"></span>
+         <b>Email:</b> <span id="email"></span>
+         <b>Shipping Address:</b> <span id="shippingStreet"></span>
+      </div>
+
+      <table>
+         <thead>
+            <tr>
+               <th>Description</th>
+               <th>Amount</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Order Total</td>
+               <td id="total"></td>
+            </tr>
+            <tr class="total-row">
+               <td>Total Paid</td>
+               <td id="total2"></td>
+            </tr>
+         </tbody>
+      </table>
+
+      <p style="margin-top:20px; font-size:13px;">Thank you for shopping with M Fragrance! A copy of this receipt has been sent to your email.</p>
+   </div>
+
+   <footer>
+      <div class="footer-grid">
+         <div>
+            <h3>Contact Us</h3>
+            <p>
+               📞 Phone: +27 76 556 8256<br>
+               📧 Email: mohaumia@gmail.com<br>
+               🌐 Website: www.mfragrance.co.za
+            </p>
+         </div>
+         <div>
+            <h3>Our Address</h3>
+            <p>
+               7915 Mmopa Crescent<br>
+               Olivenhoutbosch, Pretoria<br>
+               Gauteng, 2196<br>
+               South Africa
+            </p>
+         </div>
+         <div>
+            <h3>Business Hours</h3>
+            <p>
+               Mon - Fri: 9:00 AM - 17:00 PM<br>
+               Sat: 9:00 AM - 13:00 PM<br>
+               Sun: Closed
+            </p>
+         </div>
+      </div>
+      <p class="note">© 2026 M Fragrance. All rights reserved.</p>
+   </footer>
+</div>
+
+<script>
+// Read query string and display
+let query = location.search.slice(1).replace(/\+/g, " ");
+query = decodeURIComponent(query);
+let cardFields = query.split("&");
+for (let item of cardFields) {
+   let nameValue = item.split("=");
+   let name = nameValue[0];
+   let value = nameValue[1];
+   if (name && document.getElementById(name)) {
+      document.getElementById(name).textContent = value;
+   }
+}
+// Duplicate total to "Total Paid" row
+document.getElementById("total2").textContent = document.getElementById("total").textContent;
+</script>
+</body>
+</html>

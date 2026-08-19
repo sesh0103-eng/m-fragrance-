@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>M Fragrance | Staff</title>
+   <style>
+     *{margin:0; padding:0; box-sizing:border-box;}
+     body{font-family:Arial; background:#fdf6ec; color:#333; line-height:1.6;}
+     
+     /* HEADER & NAV */
+     .header-top{
+       background:#4d3319; 
+       color:white; 
+       text-align:center; 
+       padding:20px 0;
+       font-size:28px;
+       letter-spacing:4px;
+       text-transform:uppercase;
+       font-weight:bold;
+     }
+     nav{
+       background:#000;
+       width:100%;
+     }
+     nav ul{
+       list-style:none;
+       display:flex;
+       justify-content:flex-start;
+       padding:0 30px;
+       flex-wrap:wrap;
+     }
+     nav ul li a{
+       color:white;
+       text-decoration:none;
+       font-weight:bold;
+       padding:15px 20px;
+       display:block;
+       transition:0.3s;
+     }
+     nav ul li a:hover{
+       background:#333;
+       color:#ffd700;
+     }
+
+     /* MAIN */
+     main { padding: 30px 5%; background: white; }
+     main h2 { color:#4d3319; text-align:center; margin-bottom:20px; font-size:1.6rem; }
+     
+     /* LOGO */
+     .logo-center { display:block; margin:15px auto; }
+
+     /* ASIDE */
+     aside { 
+       background:#fff8f0; 
+       padding:20px; 
+       border-radius:8px; 
+       margin-bottom:30px;
+       border-left: 4px solid #4d3319;
+     }
+     aside h3 { color:#4d3319; margin-bottom:10px; }
+
+     /* STAFF GRID - UPDATED TO 3 COLUMNS + VERTICAL SCROLL */
+     .staff-grid { 
+       display: grid;
+       grid-template-columns: repeat(3, 1fr); /* 3 columns, 2+ rows */
+       gap: 20px; 
+       max-height: 75vh; /* vertical scroll if too many staff */
+       overflow-y: auto;
+       overflow-x: hidden;
+       padding: 20px 10px;
+     }
+
+     .staff-grid .staff-card { 
+       width: 100%;
+       text-align: center;
+       background:#fff8f0;
+       padding:15px;
+       border-radius:10px;
+       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+       transition: transform 0.3s;
+     }
+     .staff-grid .staff-card:hover{
+       transform: translateY(-5px);
+     }
+
+     .staff-card img { 
+       width: 100%;
+       height: 280px;
+       object-fit: cover;
+       border-radius: 10px;
+     }
+
+     .staff-card h3 { 
+       font-size: 1.1rem; 
+       color: #4d3319; 
+       margin-top: 10px; 
+       font-weight: bold; 
+     }
+     .staff-card p { 
+       font-size: 0.9rem; 
+       margin: 4px 0;
+       color: #333;
+     }
+     .staff-card .job { 
+       color:#c0392b; 
+       font-weight:bold; 
+     }
+     .staff-card .contact { 
+       font-size:0.85rem; 
+       color:#4d3319;
+     }
+
+     /* Custom vertical scrollbar */
+     .staff-grid::-webkit-scrollbar{
+       width: 8px;
+     }
+     .staff-grid::-webkit-scrollbar-track{
+       background: #f1e5d8;
+       border-radius: 10px;
+     }
+     .staff-grid::-webkit-scrollbar-thumb{
+       background: #4d3319;
+       border-radius: 10px;
+     }
+     .staff-grid::-webkit-scrollbar-thumb:hover{
+       background: #333;
+     }
+
+     /* FOOTER */
+     footer { 
+       background: #000;
+       color: white; 
+       text-align: center; 
+       padding: 18px; 
+       margin-top: 30px; 
+     }
+     footer a { 
+       color: #ffd700;
+       text-decoration: none; 
+       margin: 0 5px; 
+     }
+     footer a:hover { text-decoration: underline; }
+     .tel-link { color: #ffd700; font-weight: bold; }
+
+     /* TABLET: 2 COLUMNS */
+     @media screen and (max-width: 992px) {
+       .staff-grid{ grid-template-columns: repeat(2, 1fr); }
+     }
+     /* MOBILE: 1 COLUMN */
+     @media screen and (max-width: 768px) {
+       .header-top { font-size: 1.5rem; }
+       nav ul { justify-content: center; padding: 0; }
+       nav a { padding: 10px 12px; font-size: 0.85rem; }
+       .staff-grid{ 
+         grid-template-columns: 1fr; 
+         max-height: 70vh;
+       }
+       .staff-card img { height: 250px; }
+     }
+</style>
+</head>
+<body>
+
+<header>
+   <div class="header-top">
+      M Fragrance
+   </div>
+   <nav>
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="products.html">Products</a></li>
+         <li><a href="clientRegistrationForm.html">Registration</a></li>
+         <li><a href="staff.html">Staff</a></li>
+         <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+   </nav>
+</header>
+
+<main>
+  <!-- LOGO BELOW HEADING -->
+  <img src="images/logo.jpeg" alt="M Fragrance Logo" class="logo-center" style="width:120px;">
+
+  <h2>Meet Our Team</h2> 
+
+  <!-- STAFF WILL BE LOADED HERE BY JS -->
+  <div class="staff-grid" id="staffDirectory"></div>
+</main>
+
+<footer>
+  <p>&copy; 2026 M Fragrance. All Rights Reserved. 
+     <a class="tel-link" href="tel:+27765568256">📞 +27 76 556 8256</a> | 
+     <a href="mailto:mohaumia@gmail.com">✉ mohaumia@gmail.com</a>
+  </p>
+</footer>
+
+<!-- 1. JSON DIRECTORY - Chapter 8 format -->
+<script>
+const staffDirectory = [
+  {"staffNo":"S001","firstName":"Portia","lastName":"Malatji","job":"Owner","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S002","firstName":"Portia","lastName":"Malatji","job":"Marketing Manager","phone":"","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S003","firstName":"Portia","lastName":"Malatji","job":"Packaging Lead","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S004","firstName":"Portia","lastName":"Malatji","job":"Sales Consultant","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S005","firstName":"Portia","lastName":"Malatji","job":"Delivery Driver","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S006","firstName":"Portia","lastName":"Malatji","job":"Fragrance Blender","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S007","firstName":"Portia","lastName":"Malatji","job":"Customer Service","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S008","firstName":"Portia","lastName":"Malatji","job":"Stock Controller","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S009","firstName":"Portia","lastName":"Malatji","job":"Social Media","phone":"0765568256","email":"portia@mfragrance.co.za"},
+  {"staffNo":"S010","firstName":"Portia","lastName":"Malatji","job":"Driver","phone":"0765568256","email":"portia@mfragrance.co.za"}
+];
+</script>
+
+<!-- 2. JS TO LOAD JSON INTO HTML -->
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const staffGrid = document.getElementById('staffDirectory');
+  const images = [
+    'images/owner.jpeg',
+    'images/marketing.jpeg', 
+    'images/packaging.jpeg',
+    'images/sales.jpeg',
+    'images/driver.jpeg',
+    'images/sales.jpeg',
+    'images/sales.jpeg',
+    'images/sales.jpeg',
+    'images/sales.jpeg',
+    'images/driver.jpeg'
+  ];
+
+  staffDirectory.forEach((staff, index) => {
+    const card = document.createElement('div');
+    card.className = 'staff-card';
+    card.innerHTML = `
+      <img src="${images[index] || 'images/logo.jpeg'}" alt="${staff.firstName} ${staff.lastName}" onerror="this.src='images/logo.jpeg'">
+      <h3>${staff.firstName} ${staff.lastName}</h3>
+      <p class="job">${staff.job}</p>
+      <p><strong>Staff No:</strong> ${staff.staffNo}</p>
+      <p class="contact">📞 ${staff.phone}</p>
+      <p class="contact">✉ <a href="mailto:${staff.email}" style="color:#4d3319;">${staff.email}</a></p>
+    `;
+    staffGrid.appendChild(card);
+  });
+});
+</script>
+</body>
+</html>
