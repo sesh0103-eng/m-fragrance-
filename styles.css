@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Author: Sharon Seshwene | Date: 2026/07/27 -->
+   <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>M Fragrance | Home</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#fdf6ec;
+    color:#333;
+    line-height:1.6;
+}
+
+/* HEADER */
+.header-top{
+    background:#4d3319;
+    color:white;
+    text-align:center;
+    padding:20px 0;
+    font-size:28px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+nav{
+    background:#000;
+    width:100%;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:flex-start;
+    padding:0 30px;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:15px 20px;
+    display:block;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    background:#333;
+    color:#ffd700;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:25px 20px;
+    background:#fff8f0;
+}
+
+.hero h2{
+    color:#4d3319;
+    margin-bottom:15px;
+    font-size:1.6rem;
+}
+
+.hero-img{
+    width:60%;
+    max-width:500px;
+    border-radius:15px;
+    margin:0 auto;
+    display:block;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+.round{
+    border-radius:10px;
+}
+
+/* MAIN */
+main{
+    padding:30px 10%;
+    background:white;
+}
+
+main h2{
+    color:#4d3319;
+    text-align:center;
+    margin-bottom:25px;
+    font-size:1.5rem;
+}
+
+.about-paragraph{
+    margin-bottom:25px;
+    line-height:1.7;
+}
+
+/* GALLERY */
+.gallery-section{
+    padding:40px 5%;
+    text-align:center;
+    background:#fff8f0;
+}
+
+.gallery-section h2{
+    color:#4d3319;
+    margin-bottom:20px;
+    font-size:1.5rem;
+}
+
+/* VERTICAL SCROLLING GALLERY */
+.gallery{
+    display:flex;
+    flex-direction:column; /* stack vertically */
+    align-items:center;
+    gap:20px;
+    max-height:80vh;       /* fixed height so scroll appears */
+    overflow-y:auto;       /* vertical scroll */
+    overflow-x:hidden;     /* hide horizontal */
+    padding:20px 10px;
+}
+
+.gallery img{
+    width:300px;
+    max-width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* Vertical Scrollbar */
+.gallery::-webkit-scrollbar{
+    width:8px;
+}
+
+.gallery::-webkit-scrollbar-track{
+    background:#f1e5d8;
+    border-radius:10px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    background:#4d3319;
+    border-radius:10px;
+}
+
+.gallery::-webkit-scrollbar-thumb:hover{
+    background:#333;
+}
+
+/* LIGHTBOX */
+#lightbox{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+#lightbox-img{
+    max-width:80%;
+    max-height:70%;
+    border-radius:10px;
+}
+
+#lightboxCaption{
+    color:white;
+    margin-top:15px;
+    font-size:1.2rem;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:30px;
+}
+
+footer a{
+    color:#ffd700;
+    text-decoration:none;
+    margin:0 5px;
+}
+
+.tel-link{
+    color:#ffd700;
+    font-weight:bold;
+}
+
+/* MOBILE */
+@media screen and (max-width:768px){
+
+    .header-top{
+        font-size:1.5rem;
+    }
+
+    nav ul{
+        justify-content:center;
+        padding:0;
+    }
+
+    nav ul li a{
+        padding:10px 12px;
+        font-size:0.85rem;
+    }
+
+    .hero-img{
+        width:90%;
+    }
+
+    .gallery{
+        max-height:70vh;
+    }
+
+    .gallery img{
+        width:90%;
+        height:200px;
+    }
+
+    main{
+        padding:30px 5%;
+    }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top">M Fragrance</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="clientRegistrationForm.html">Registration</a></li>
+      <li><a href="staff.html">Staff</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Welcome to M Fragrance</h2>
+  <img src="images/logo.jpeg" alt="M Fragrance Hero" class="hero-img round">
+</section>
+
+<main>
+  <h2>About Us</h2>
+  <p class="about-paragraph">
+    M Fragrance brings you premium scents for every occasion. From warm vanilla to fresh floral, 
+    we have something for everyone. Shop our collection and find your signature scent.
+  </p>
+</main>
+
+<section class="gallery-section">
+  <h2>Our Products</h2>
+  
+  <div class="gallery">
+    <img src="images/coco vanilla.jpeg" alt="Coco Vanilla - R150.00" onclick="openLightbox(this)">
+    <img src="images/saad.jpeg" alt="Saad - R110.00" onclick="openLightbox(this)">
+    <img src="images/body spray.jpeg" alt="Body Spray - R50.00" onclick="openLightbox(this)">
+    <img src="images/hand lotion.jpeg" alt="Hand Lotion - R40.00" onclick="openLightbox(this)">
+    <img src="images/gorgeous girl.jpeg" alt="Gorgeous Girl - R110.00" onclick="openLightbox(this)">
+    <img src="images/ombrex.jpeg" alt="Ombrex - R110.00" onclick="openLightbox(this)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightbox-img">
+  <p id="lightboxCaption"></p>
+</div>
+
+<footer>
+  <p>&copy; 2026 M Fragrance. All rights reserved.</p>
+  <p>Contact: <a href="tel:0765568256" class="tel-link">076 556 8256</a> | 
+  <a href="https://wa.me/27765568256" target="_blank">WhatsApp Us</a></p>
+</footer>
+
+<script>
+function openLightbox(img){
+  document.getElementById('lightbox').style.display = 'flex';
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightboxCaption').textContent = img.alt;
+}
+function closeLightbox(){
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+</body>
+</html>
