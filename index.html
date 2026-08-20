@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>M Fragrance | Home</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>M Fragrance | Luxury Perfumes & Body Sprays</title>
+   <meta name="description" content="M Fragrance sells luxury body sprays, hand lotions, and perfumes in Olivenhoutbosch. Shop Coco Vanilla, Saad, Ombrex and more.">
    <style>
      *{margin:0; padding:0; box-sizing:border-box;}
      body{font-family:Arial; background:#fdf6ec; color:#333;}
@@ -28,6 +29,7 @@
        display:flex;
        justify-content:flex-start;
        padding:0 30px;
+       flex-wrap:wrap;
      }
      nav ul li a{
        color:white;
@@ -35,6 +37,7 @@
        font-weight:bold;
        padding:15px 20px;
        display:block;
+       transition:0.3s;
      }
      nav ul li a:hover{
        background:#333;
@@ -44,7 +47,8 @@
      /* HERO */
      .hero { text-align:center; padding:25px 20px; background:#fff8f0; }
      .hero h2 { color:#4d3319; margin-bottom:15px; }
-     .hero-img { width: 60%; max-width:500px; border-radius:15px; margin:0 auto; display:block; }
+     .hero-img { width: 60%; max-width:500px; height:auto; border-radius:15px; margin:0 auto; display:block; }
+     .logo-center { width:120px; height:120px; margin:15px 0; display:block; }
      .round { border-radius: 10px; }
 
      /* MAIN */
@@ -100,6 +104,15 @@
      /* FOOTER */
      footer { background: #4d3319; color: white; text-align: center; padding: 18px; margin-top: 30px; }
      footer a { color: #ffd700; text-decoration: none; margin: 0 5px; }
+     footer a:hover { text-decoration: underline; }
+     .tel-link { color: #ffd700; font-weight: bold; }
+
+     /* MOBILE */
+     @media screen and (max-width: 768px){
+       .header-top { font-size: 1.5rem; }
+       nav ul { justify-content: center; padding: 0; }
+       nav a { padding: 10px 12px; font-size: 0.85rem; }
+     }
    </style>
 </head>
 <body>
@@ -116,10 +129,11 @@
          <li><a href="staff.html">Staff</a></li>
          <li><a href="contact.html">Contact Us</a></li>
       </ul>
-   </nav> <!-- FIXED: closed nav tag -->
+   </nav>
 </header>
+
  <!-- 7b. LOGO BELOW HEADING -->
-  <img src="images/logo.jpeg" alt="M Fragrance Logo" style="width:120px; margin:15px 0;">
+  <img src="images/logo.jpeg" alt="M Fragrance Logo" width="120" height="120" class="logo-center">
   
   <!-- ADDED: Last Visit Bar -->
   <div id="lastVisited" style="text-align:center; font-size:0.9rem; color:#4d3319; background:#fff8f0; padding:10px 0; font-weight:bold; border-bottom:1px solid #e0d3c3;"></div>
@@ -127,8 +141,7 @@
 <!-- 4c. HERO IMAGE -->
 <section class="hero">
    <h2>Luxury Fragrances at Affordable Prices</h2>
-   <!-- FIXED: added missing quote -->
-   <img src="images/hero.jpeg" alt="Hero" width="1500 height="150">
+   <img src="images/hero.jpeg" alt="Luxury Fragrances at Affordable Prices" width="500" height="333" class="hero-img">
 </section>
 
 <!-- 4d. MAIN -->
@@ -174,12 +187,12 @@
 <section class="gallery-section">
    <h2>Our Fragrance Collection</h2>
    <div class="gallery">
-      <img src="images/coco vanilla.jpeg" alt="Coco Vanilla" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/saad.jpeg" alt="Saad" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/body spray.jpeg" alt="Body Spray" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/hand lotion.jpeg" alt="Hand Lotion" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/gorgeous girl.jpeg" alt="Gorgeous Girl" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/ombrex.jpeg" alt="Ombrex" onclick="openLightbox(this.src, this.alt)" width="220" height="250">
+      <img src="images/coco-vanilla.jpeg" alt="Coco Vanilla Perfume" width="250" height="250" onclick="openLightbox(this.src, this.alt)">
+      <img src="images/saad.jpeg" alt="Saad Perfume for Men" width="250" height="250" onclick="openLightbox(this.src, this.alt)">
+      <img src="images/body-spray.jpeg" alt="Body Spray 100ml" width="250" height="250" onclick="openLightbox(this.src, this.alt)">
+      <img src="images/hand-lotion.jpeg" alt="Hand Lotion 60ml" width="250" height="250" onclick="openLightbox(this.src, this.alt)">
+      <img src="images/gorgeous-girl.jpeg" alt="Gorgeous Girl Perfume" width="250" height="250" onclick="openLightbox(this.src, this.alt)">
+      <img src="images/ombrex.jpeg" alt="Ombrex Unisex Perfume" width="250" height="250" onclick="openLightbox(this.src, this.alt)">
    </div>
 </section>
 
@@ -214,7 +227,7 @@ window.addEventListener('DOMContentLoaded', () => {
   localStorage.setItem('mf_lastVisit', new Date().toISOString());
 });
 
-// YOUR EXISTING SCRIPT
+// LIGHTBOX SCRIPT
 function openLightbox(src, alt){
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
