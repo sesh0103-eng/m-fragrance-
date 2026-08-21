@@ -4,26 +4,26 @@
 <!-- Author: Sharon Seshwene | Date: 2026/07/27 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>M Fragrance | Products - Luxury Perfumes</title>
-<meta name="description" content="Shop M Fragrance products. Luxury perfumes for men and women. Select minimum 2 fragrances including Coco Vanilla. Affordable prices in South Africa.">
-<meta name="keywords" content="M Fragrance, products, perfume, Coco Vanilla, buy perfume South Africa">
+<title>M Fragrance | Products - Luxury Perfumes South Africa</title>
+<meta name="description" content="Shop M Fragrance luxury perfumes for men and women. Select minimum 2 fragrances including Coco Vanilla. Affordable authentic fragrances in South Africa.">
+<meta name="keywords" content="M Fragrance, products, perfume, Coco Vanilla, buy perfume South Africa, luxury fragrance">
 <meta name="author" content="Sharon Seshwene">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#fdf6ec;color:#333}
+body{font-family:Arial,sans-serif;background:#fdf6ec;color:#333;line-height:1.6}
 .header-top{background:#4d3319;color:#fff;text-align:center;padding:20px 0;font-size:28px;font-weight:700;letter-spacing:2px}
 nav{background:#000}
 nav ul{list-style:none;display:flex;padding:0 30px;margin:0;flex-wrap:wrap}
 nav ul li a{color:#fff;text-decoration:none;font-weight:700;padding:15px 20px;display:block;transition:.3s}
 nav ul li a:hover,nav ul li a:focus{background:#333;color:#ffd700;outline:2px solid #ffd700}
-main{padding:30px 5%}
-h1{text-align:center;color:#4d3319;margin-bottom:20px;font-size:28px}
+main{padding:30px 5%;max-width:1400px;margin:0 auto}
+h1{text-align:center;color:#4d3319;margin-bottom:30px;font-size:28px}
 
-/* UPDATED: RESPONSIVE GRID + LAZY IMAGES */
+/* RESPONSIVE 3 COL GRID */
 .product-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); /* responsive 3 to 1 cols */
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 .product-card{
 background:#fff;
@@ -31,21 +31,26 @@ border-radius:10px;
 padding:15px;
 box-shadow:0 4px 8px rgba(0,0,0,.1);
 text-align:center;
+transition:transform .2s;
 }
+.product-card:hover{transform:translateY(-5px)}
 .product-card img{
 width:100%;
 height:250px;
 object-fit:cover;
 border-radius:8px;
-margin-bottom:10px;
+margin-bottom:12px;
 }
-.product-card h3{color:#4d3319;margin-bottom:5px}
-.product-card p{margin:5px 0;font-size:14px}
+.product-card h3{color:#4d3319;margin-bottom:8px;font-size:20px}
+.product-card .price{font-weight:700;color:#4d3319;font-size:18px;margin:5px 0}
+.product-card p{margin:5px 0;font-size:14px;color:#555;min-height:40px}
 .btn{
-background:#4d3319;color:#fff;border:none;padding:10px 15px;
-border-radius:5px;cursor:pointer;font-weight:700;margin-top:10px;width:100%
+background:#4d3319;color:#fff;border:none;padding:12px 15px;
+border-radius:5px;cursor:pointer;font-weight:700;margin-top:10px;width:100%;
+font-size:16px;transition:.3s
 }
 .btn:hover{background:#333}
+.btn:focus{outline:3px solid #ffd700;outline-offset:2px} /* Accessibility fix */
 footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:40px}
 </style>
 </head>
@@ -69,30 +74,56 @@ footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:4
 
 <!-- PRODUCT 1 -->
 <div class="product-card">
-<!-- CRITICAL: Compress each product image to 600px wide, <100KB -->
-<img src="coco-vanilla-600.jpg" alt="Coco Vanilla perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
+<img src="coco-vanilla-500.webp" alt="Coco Vanilla perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
 <h3>Coco Vanilla</h3>
-<p><strong>Price:</strong> R150.00</p>
+<p class="price">R150.00</p>
 <p>Warm blend of coconut and vanilla. Perfect for evening wear.</p>
-<button class="btn">Add to Wishlist</button>
+<button class="btn" aria-label="Add Coco Vanilla to Wishlist">Add to Wishlist</button>
 </div>
 
-<!-- PRODUCT 2 - COPY THIS BLOCK -->
+<!-- PRODUCT 2 -->
 <div class="product-card">
-<img src="product2-600.jpg" alt="Product Name perfume bottle" width="300" height="250" loading="lazy" decoding="async">
-<h3>Product Name</h3>
-<p><strong>Price:</strong> R180.00</p>
-<p>Short product description here.</p>
-<button class="btn">Add to Wishlist</button>
+<img src="product2-500.webp" alt="Product 2 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
+<h3>Product Name 2</h3>
+<p class="price">R180.00</p>
+<p>Fresh and floral scent for everyday use.</p>
+<button class="btn" aria-label="Add Product Name 2 to Wishlist">Add to Wishlist</button>
 </div>
 
 <!-- PRODUCT 3 -->
 <div class="product-card">
-<img src="product3-600.jpg" alt="Product Name perfume bottle" width="300" height="250" loading="lazy" decoding="async">
-<h3>Product Name</h3>
-<p><strong>Price:</strong> R200.00</p>
-<p>Short product description here.</p>
-<button class="btn">Add to Wishlist</button>
+<img src="product3-500.webp" alt="Product 3 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
+<h3>Product Name 3</h3>
+<p class="price">R200.00</p>
+<p>Woody and masculine fragrance with long lasting scent.</p>
+<button class="btn" aria-label="Add Product Name 3 to Wishlist">Add to Wishlist</button>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="product-card">
+<img src="product4-500.webp" alt="Product 4 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
+<h3>Product Name 4</h3>
+<p class="price">R170.00</p>
+<p>Sweet and fruity fragrance for women.</p>
+<button class="btn" aria-label="Add Product Name 4 to Wishlist">Add to Wishlist</button>
+</div>
+
+<!-- PRODUCT 5 -->
+<div class="product-card">
+<img src="product5-500.webp" alt="Product 5 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
+<h3>Product Name 5</h3>
+<p class="price">R190.00</p>
+<p>Fresh aquatic scent perfect for summer.</p>
+<button class="btn" aria-label="Add Product Name 5 to Wishlist">Add to Wishlist</button>
+</div>
+
+<!-- PRODUCT 6 -->
+<div class="product-card">
+<img src="product6-500.webp" alt="Product 6 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
+<h3>Product Name 6</h3>
+<p class="price">R210.00</p>
+<p>Luxury oriental fragrance with spicy notes.</p>
+<button class="btn" aria-label="Add Product Name 6 to Wishlist">Add to Wishlist</button>
 </div>
 
 </div>
