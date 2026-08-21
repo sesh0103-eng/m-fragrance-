@@ -4,10 +4,12 @@
 <!-- Author: Sharon Seshwene | Date: 2026/07/27 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#4d3319"> <!-- Best Practices fix -->
 <title>M Fragrance | Products - Luxury Perfumes South Africa</title>
 <meta name="description" content="Shop M Fragrance luxury perfumes for men and women. Select minimum 2 fragrances including Coco Vanilla. Affordable authentic fragrances in South Africa.">
 <meta name="keywords" content="M Fragrance, products, perfume, Coco Vanilla, buy perfume South Africa, luxury fragrance">
 <meta name="author" content="Sharon Seshwene">
+<link rel="preload" as="image" href="coco-vanilla-500.webp"> <!-- Performance fix -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Arial,sans-serif;background:#fdf6ec;color:#333;line-height:1.6}
@@ -50,7 +52,7 @@ border-radius:5px;cursor:pointer;font-weight:700;margin-top:10px;width:100%;
 font-size:16px;transition:.3s
 }
 .btn:hover{background:#333}
-.btn:focus{outline:3px solid #ffd700;outline-offset:2px} /* Accessibility fix */
+.btn:focus{outline:3px solid #ffd700;outline-offset:2px} /* Accessibility 100 */
 footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:40px}
 </style>
 </head>
@@ -74,7 +76,7 @@ footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:4
 
 <!-- PRODUCT 1 -->
 <div class="product-card">
-<img src="coco-vanilla-500.webp" alt="Coco Vanilla perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
+<img src="coco-vanilla-500.webp" alt="Coco Vanilla perfume bottle by M Fragrance" width="300" height="250" loading="eager" decoding="async"> <!-- eager because it's first -->
 <h3>Coco Vanilla</h3>
 <p class="price">R150.00</p>
 <p>Warm blend of coconut and vanilla. Perfect for evening wear.</p>
