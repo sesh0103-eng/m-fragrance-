@@ -1,138 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Author: Sharon Seshwene | Date: 2026/07/27 -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#4d3319"> <!-- Best Practices fix -->
-<title>M Fragrance | Products - Luxury Perfumes South Africa</title>
-<meta name="description" content="Shop M Fragrance luxury perfumes for men and women. Select minimum 2 fragrances including Coco Vanilla. Affordable authentic fragrances in South Africa.">
-<meta name="keywords" content="M Fragrance, products, perfume, Coco Vanilla, buy perfume South Africa, luxury fragrance">
-<meta name="author" content="Sharon Seshwene">
-<link rel="preload" as="image" href="coco-vanilla-500.webp"> <!-- Performance fix -->
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#fdf6ec;color:#333;line-height:1.6}
-.header-top{background:#4d3319;color:#fff;text-align:center;padding:20px 0;font-size:28px;font-weight:700;letter-spacing:2px}
-nav{background:#000}
-nav ul{list-style:none;display:flex;padding:0 30px;margin:0;flex-wrap:wrap}
-nav ul li a{color:#fff;text-decoration:none;font-weight:700;padding:15px 20px;display:block;transition:.3s}
-nav ul li a:hover,nav ul li a:focus{background:#333;color:#ffd700;outline:2px solid #ffd700}
-main{padding:30px 5%;max-width:1400px;margin:0 auto}
-h1{text-align:center;color:#4d3319;margin-bottom:30px;font-size:28px}
+   <!-- Author: Sharon Seshwene | Date: 2026/07/27 -->
+   <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>M Fragrance | Products</title>
+   <style>
+     body{font-family:Arial; background:#fdf6ec; margin:0;}
+  .header-top{background:#4d3319; color:white; text-align:center; padding:20px 0; font-size:28px; font-weight:bold; letter-spacing:2px;}
+     nav{background:#000;}
+     nav ul{list-style:none; display:flex; padding:0 30px; margin:0; flex-wrap:wrap;}
+     nav ul li a{color:white; text-decoration:none; font-weight:bold; padding:15px 20px; display:block; transition:0.3s;}
+     nav ul li a:hover{background:#333; color:#ffd700;}
+     main{ padding: 30px 5%; }
 
-/* RESPONSIVE 3 COL GRID */
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-.product-card{
-background:#fff;
-border-radius:10px;
-padding:15px;
-box-shadow:0 4px 8px rgba(0,0,0,.1);
-text-align:center;
-transition:transform .2s;
-}
-.product-card:hover{transform:translateY(-5px)}
-.product-card img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:8px;
-margin-bottom:12px;
-}
-.product-card h3{color:#4d3319;margin-bottom:8px;font-size:20px}
-.product-card .price{font-weight:700;color:#4d3319;font-size:18px;margin:5px 0}
-.product-card p{margin:5px 0;font-size:14px;color:#555;min-height:40px}
-.btn{
-background:#4d3319;color:#fff;border:none;padding:12px 15px;
-border-radius:5px;cursor:pointer;font-weight:700;margin-top:10px;width:100%;
-font-size:16px;transition:.3s
-}
-.btn:hover{background:#333}
-.btn:focus{outline:3px solid #ffd700;outline-offset:2px} /* Accessibility 100 */
-footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:40px}
-</style>
+     /* UPDATED: 3 COLUMNS GRID + VERTICAL SCROLL */
+  .product-grid{
+       display: grid;
+       grid-template-columns: repeat(3, 1fr); /* 3 columns, 2 rows */
+       gap: 20px;
+       max-height: 75vh; /* vertical scroll if too tall */
+       overflow-y: auto;
+       overflow-x: hidden;
+       padding: 20px 10px;
+       justify-items: center;
+     }
+
+     /* Custom scrollbar */
+  .product-grid::-webkit-scrollbar{ width:8px; }
+  .product-grid::-webkit-scrollbar-track{ background:#f1e5d8; border-radius:10px; }
+  .product-grid::-webkit-scrollbar-thumb{ background:#4d3319; border-radius:10px; }
+  .product-grid::-webkit-scrollbar-thumb:hover{ background:#333; }
+
+  .product-card{
+       width: 100%;
+       border: 1px solid #ddd;
+       padding: 15px;
+       border-radius: 8px;
+       background:#fff8f0;
+       display:flex;
+       flex-direction:column;
+       box-shadow:0 2px 6px rgba(0,0,0,0.1);
+     }
+  .product-card img{ width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+  .product-card h3{ color:#4d3319; margin:10px 0 5px 0; }
+  .price{ font-weight:bold; color:#c0392b; }
+  .desc{ font-size:0.9rem; color:#555; margin:8px 0; line-height:1.4; flex-grow:1; }
+
+    /* WHATSAPP BUTTON */
+  .whatsapp-btn{
+        display:block;
+        text-align:center;
+        background:#25D366;
+        color:white;
+        padding:10px;
+        border-radius:5px;
+        text-decoration:none;
+        font-weight:bold;
+        margin:10px 0;
+        transition:0.3s;
+      }
+  .whatsapp-btn:hover{ background:#1ebe5b; }
+
+  .action { background: #4d3319; color: white; border: none; padding: 12px 25px; font-size: 1rem; border-radius: 6px; cursor: pointer; display: block; margin: 20px auto; font-weight:bold; }
+  .action:hover{background:#333;}
+  .error { color: red; text-align: center; font-weight: bold; margin-bottom:10px; }
+  .qty-input{width:60px; padding:4px; margin-left:5px;}
+
+     /* TABLET: 2 COLUMNS */
+     @media screen and (max-width:992px){
+    .product-grid{ grid-template-columns: repeat(2, 1fr); }
+     }
+     /* MOBILE: 1 COLUMN */
+     @media screen and (max-width:768px){
+    .product-grid{
+        grid-template-columns: 1fr; /* stack 1 under 1 on mobile */
+        max-height: 70vh;
+      }
+     }
+   </style>
 </head>
 <body>
 <header>
-<div class="header-top">M FRAGRANCE</div>
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="products.html">Products</a></li>
-<li><a href="registration.html">Registration</a></li>
-<li><a href="staff.html">Staff</a></li>
-<li><a href="contact.html">Contact Us</a></li>
-</ul>
-</nav>
+  <div class="header-top">M Fragrance</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="clientRegistrationForm.html">Registration</a></li>
+      <li><a href="staff.html">Staff</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
-<h1>Our Products - Select minimum 2</h1>
-<div class="product-grid">
+  <img src="images/logo.jpeg" alt="M Fragrance Logo" style="width:120px; margin:15px 0; display:block;">
+  <h2 style="text-align:center; color:#4d3319;">Our Products - Select minimum 2</h2>
+  <p class="error" id="errorMsg"></p>
 
-<!-- PRODUCT 1 -->
-<div class="product-card">
-<img src="coco-vanilla-500.webp" alt="Coco Vanilla perfume bottle by M Fragrance" width="300" height="250" loading="eager" decoding="async"> <!-- eager because it's first -->
-<h3>Coco Vanilla</h3>
-<p class="price">R150.00</p>
-<p>Warm blend of coconut and vanilla. Perfect for evening wear.</p>
-<button class="btn" aria-label="Add Coco Vanilla to Wishlist">Add to Wishlist</button>
-</div>
+  <form id="productForm" action="clientRegistrationForm.html" method="get">
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/coco vanilla.jpeg" alt="Coco Vanilla">
+      <h3>Coco Vanilla</h3>
+      <p class="price">R150.00</p>
+      <p class="desc">Warm blend of coconut and vanilla. Perfect for evening wear. 80ml.</p>
+      <a href="https://wa.me/27765568256?text=Hi%20M%20Fragrance%2C%20I%20would%20like%20to%20order%20Coco%20Vanilla%20R80.00" target="_blank" class="whatsapp-btn">📱 Order on WhatsApp</a>
+      <label><input type="checkbox" name="product" value="Coco Vanilla|80.00"> Select</label>
+      <label>Qty: <input type="number" name="qty_Coco Vanilla" value="0" min="0" class="qty-input"></label>
+    </div>
 
-<!-- PRODUCT 2 -->
-<div class="product-card">
-<img src="product2-500.webp" alt="Product 2 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
-<h3>Product Name 2</h3>
-<p class="price">R180.00</p>
-<p>Fresh and floral scent for everyday use.</p>
-<button class="btn" aria-label="Add Product Name 2 to Wishlist">Add to Wishlist</button>
-</div>
+    <div class="product-card">
+      <img src="images/saad.jpeg" alt="Saad">
+      <h3>Saad</h3>
+      <p class="price">R110.00</p>
+      <p class="desc">Woodier and amber-forward fragrance designed for men. Long lasting scent. 40ml.</p>
+      <a href="https://wa.me/27765568256?text=Hi%20M%20Fragrance%2C%20I%20would%20like%20to%20order%20Saad%20R70.00" target="_blank" class="whatsapp-btn">📱 Order on WhatsApp</a>
+      <label><input type="checkbox" name="product" value="Saad|70.00"> Select</label>
+      <label>Qty: <input type="number" name="qty_Saad" value="0" min="0" class="qty-input"></label>
+    </div>
 
-<!-- PRODUCT 3 -->
-<div class="product-card">
-<img src="product3-500.webp" alt="Product 3 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
-<h3>Product Name 3</h3>
-<p class="price">R200.00</p>
-<p>Woody and masculine fragrance with long lasting scent.</p>
-<button class="btn" aria-label="Add Product Name 3 to Wishlist">Add to Wishlist</button>
-</div>
+    <div class="product-card">
+      <img src="images/body spray.jpeg" alt="Body Spray">
+      <h3>Body Spray</h3>
+      <p class="price">R50.00</p>
+      <p class="desc">Light everyday spray for all-day freshness. Great for gym and school. 100ml.</p>
+      <a href="https://wa.me/27765568256?text=Hi%20M%20Fragrance%2C%20I%20would%20like%20to%20order%20Body%20Spray%20R45.00" target="_blank" class="whatsapp-btn">📱 Order on WhatsApp</a>
+      <label><input type="checkbox" name="product" value="Body Spray|45.00"> Select</label>
+      <label>Qty: <input type="number" name="qty_Body Spray" value="0" min="0" class="qty-input"></label>
+    </div>
 
-<!-- PRODUCT 4 -->
-<div class="product-card">
-<img src="product4-500.webp" alt="Product 4 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
-<h3>Product Name 4</h3>
-<p class="price">R170.00</p>
-<p>Sweet and fruity fragrance for women.</p>
-<button class="btn" aria-label="Add Product Name 4 to Wishlist">Add to Wishlist</button>
-</div>
+    <div class="product-card">
+      <img src="images/hand lotion.jpeg" alt="Hand Lotion">
+      <h3>Hand Lotion</h3>
+      <p class="price">R40.00</p>
+      <p class="desc">Moisturizing hand lotion with subtle fragrance. Keeps hands soft. 60ml.</p>
+      <a href="https://wa.me/27765568256?text=Hi%20M%20Fragrance%2C%20I%20would%20like%20to%20order%20Hand%20Lotion%20R55.00" target="_blank" class="whatsapp-btn">📱 Order on WhatsApp</a>
+      <label><input type="checkbox" name="product" value="Hand Lotion|55.00"> Select</label>
+      <label>Qty: <input type="number" name="qty_Hand Lotion" value="0" min="0" class="qty-input"></label>
+    </div>
 
-<!-- PRODUCT 5 -->
-<div class="product-card">
-<img src="product5-500.webp" alt="Product 5 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
-<h3>Product Name 5</h3>
-<p class="price">R190.00</p>
-<p>Fresh aquatic scent perfect for summer.</p>
-<button class="btn" aria-label="Add Product Name 5 to Wishlist">Add to Wishlist</button>
-</div>
+    <div class="product-card">
+      <img src="images/gorgeous girl.jpeg" alt="Gorgeous Girl">
+      <h3>Gorgeous Girl</h3>
+      <p class="price">R110.00</p>
+      <p class="desc">Floral and fruity scent for young women. Sweet and playful. 40ml.</p>
+      <a href="https://wa.me/27765568256?text=Hi%20M%20Fragrance%2C%20I%20would%20like%20to%20order%20Gorgeous%20Girl%20R90.00" target="_blank" class="whatsapp-btn">📱 Order on WhatsApp</a>
+      <label><input type="checkbox" name="product" value="Gorgeous Girl|90.00"> Select</label>
+      <label>Qty: <input type="number" name="qty_Gorgeous Girl" value="0" min="0" class="qty-input"></label>
+    </div>
 
-<!-- PRODUCT 6 -->
-<div class="product-card">
-<img src="product6-500.webp" alt="Product 6 perfume bottle by M Fragrance" width="300" height="250" loading="lazy" decoding="async">
-<h3>Product Name 6</h3>
-<p class="price">R210.00</p>
-<p>Luxury oriental fragrance with spicy notes.</p>
-<button class="btn" aria-label="Add Product Name 6 to Wishlist">Add to Wishlist</button>
-</div>
-
-</div>
+    <div class="product-card">
+      <img src="images/ombrex.jpeg" alt="Ombrex">
+      <h3>Ombrex</h3>
+      <p class="price">R110.00</p>
+      <p class="desc">Unisex designer-inspired scent. Fresh and clean notes. 40ml.</p>
+      <a href="https://wa.me/27765568256?text=Hi%20M%20Fragrance%2C%20I%20would%20like%20to%20order%20Ombrex%20R75.00" target="_blank" class="whatsapp-btn">📱 Order on WhatsApp</a>
+      <label><input type="checkbox" name="product" value="Ombrex|75.00"> Select</label>
+      <label>Qty: <input type="number" name="qty_Ombrex" value="0" min="0" class="qty-input"></label>
+    </div>
+  </div>
+  <input type="submit" class="action" value="Continue to Registration">
+  </form>
 </main>
 
-<footer>
-<p>&copy; 2026 M Fragrance. All Rights Reserved.</p>
-</footer>
+<script>
+document.getElementById("productForm").addEventListener("submit", function(e){
+   let errorMsg = document.getElementById("errorMsg");
+   errorMsg.textContent = "";
+
+   let validProducts = 0;
+   let checkboxes = document.querySelectorAll('input[name="product"]');
+
+   checkboxes.forEach(cb => {
+      if(cb.checked){
+         let qtyName = "qty_" + cb.value.split("|")[0];
+         let qtyInput = document.querySelector(`input[name="${qtyName}"]`);
+         let qty = parseInt(qtyInput.value) || 0;
+
+         if(qty < 1){
+            e.preventDefault();
+            errorMsg.textContent = "Please enter quantity 1 or more for selected products.";
+            qtyInput.style.border = "2px solid red";
+            return;
+         } else {
+            qtyInput.style.border = "1px solid #ccc";
+            validProducts++;
+         }
+      }
+   });
+
+   if(validProducts < 2){
+      e.preventDefault();
+      errorMsg.textContent = "Please select at least 2 products with quantity 1 or more.";
+   }
+});
+
+document.querySelectorAll('.qty-input').forEach(qtyInput => {
+   qtyInput.addEventListener('input', function(){
+      let productName = this.name.replace('qty_', '');
+      let checkbox = document.querySelector(`input[value^="${productName}|"]`);
+      if(parseInt(this.value) > 0){
+         checkbox.checked = true;
+      }
+   });
+});
+</script>
 </body>
 </html>
