@@ -1,237 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>M Fragrance | Home</title>
-   <style>
-     *{margin:0; padding:0; box-sizing:border-box;}
-     body{font-family:Arial; background:#fdf6ec; color:#333;}
-     
-     /* HEADER & NAV */
-     .header-top{
-       background:#4d3319; 
-       color:white; 
-       text-align:center; 
-       padding:20px 0;
-       font-size:28px;
-       letter-spacing:4px;
-       text-transform:uppercase;
-       font-weight:bold;
-     }
-     nav{
-       background:#000;
-       width:100%;
-     }
-     nav ul{
-       list-style:none;
-       display:flex;
-       justify-content:flex-start;
-       padding:0 30px;
-     }
-     nav ul li a{
-       color:white;
-       text-decoration:none;
-       font-weight:bold;
-       padding:15px 20px;
-       display:block;
-     }
-     nav ul li a:hover{
-       background:#333;
-       color:#ffd700;
-     }
-
-     /* HERO */
-     .hero { text-align:center; padding:25px 20px; background:#fff8f0; }
-     .hero h2 { color:#4d3319; margin-bottom:15px; }
-     .hero-img { width: 60%; max-width:500px; border-radius:15px; margin:0 auto; display:block; }
-     .round { border-radius: 10px; }
-
-     /* MAIN */
-     main { padding: 30px 10%; background: white; }
-     main h2 { color:#4d3319; text-align:center; margin-bottom:25px; }
-     .about-paragraph { margin-bottom: 25px; line-height: 1.7; }
-
-     /* GALLERY - THIS MAKES IT SCROLL */
-     .gallery-section { 
-       padding: 40px 5%; 
-       text-align: center; 
-       background: #fff8f0; 
-     }
-     .gallery-section h2{ color:#4d3319; margin-bottom:20px; }
-
-     .gallery { 
-       display: flex; /* 1. puts images in a row */
-       gap: 20px; 
-       overflow-x: auto; /* 2. enables horizontal scroll */
-       padding: 20px 10px;
-       scroll-snap-type: x mandatory; /* nice snap effect */
-     }
-
-     .gallery img { 
-       min-width: 250px; /* 3. stops images from shrinking/wrapping */
-       height: 250px;
-       object-fit: cover;
-       border-radius: 10px; 
-       cursor: pointer; 
-       transition: 0.3s;
-       scroll-snap-align: start;
-     }
-     .gallery img:hover { transform: scale(1.05); }
-
-     /* LIGHTBOX */
-     #lightbox { 
-       display: none; 
-       position: fixed; 
-       z-index: 2000; 
-       top: 0; 
-       left: 0; 
-       width: 100%; 
-       height: 100%; 
-       background: rgba(0,0,0,0.9); 
-       justify-content: center; 
-       align-items: center; 
-       flex-direction: column; 
-     }
-     #lightbox-img { max-width: 80%; max-height: 70%; border-radius: 10px; }
-     #lightboxCaption { color: white; margin-top: 15px; font-size: 1.2rem; }
-     .close { position: absolute; top: 20px; right: 40px; color: white; font-size: 40px; cursor: pointer; }
-
-     /* FOOTER */
-     footer { background: #4d3319; color: white; text-align: center; padding: 18px; margin-top: 30px; }
-     footer a { color: #ffd700; text-decoration: none; margin: 0 5px; }
-   </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>M Fragrance | Luxury Perfumes South Africa</title>
+<meta name="description" content="M Fragrance - Luxury fragrances at affordable prices. Shop perfumes for men and women in South Africa. Independent, locally owned.">
+<meta name="keywords" content="M Fragrance, perfume, fragrance, luxury perfume, South Africa, affordable perfume">
+<meta name="author" content="M Fragrance">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#fdf6ec;color:#333;line-height:1.6}
+.header-top{background:#4d3319;color:#fff;text-align:center;padding:20px 0;font-size:28px;letter-spacing:4px;text-transform:uppercase;font-weight:700}
+nav{background:#000;width:100%}
+nav ul{list-style:none;display:flex;justify-content:flex-start;padding:0 30px;flex-wrap:wrap}
+nav ul li a{color:#fff;text-decoration:none;font-weight:700;padding:15px 20px;display:block;transition:.3s}
+nav ul li a:hover,nav ul li a:focus{background:#333;color:#ffd700;outline:2px solid #ffd700}
+.hero{text-align:center;padding:40px 20px;background:#fff}
+.hero img{max-width:100%;height:auto;border-radius:10px;margin-bottom:20px}
+.hero h1{color:#4d3319;font-size:32px;margin-bottom:10px}
+.hero p{font-size:18px;color:#555}
+.about{max-width:900px;margin:40px auto;padding:0 20px;text-align:center}
+.about h2{color:#4d3319;margin-bottom:15px;font-size:26px}
+footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:40px}
+</style>
 </head>
 <body>
-
 <header>
-   <div class="header-top">
-     <h1>M Fragrance</h1>
-   </div>
-   <nav>
-      <ul>
-         <li><a href="index.html">Home</a></li>
-         <li><a href="products.html">Products</a></li>
-         <li><a href="clientRegistrationForm.html">Registration</a></li>
-         <li><a href="staff.html">Staff</a></li>
-         <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-   </nav> <!-- FIXED: closed nav tag -->
+<div class="header-top">M FRAGRANCE</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="registration.html">Registration</a></li>
+<li><a href="staff.html">Staff</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
 </header>
- <!-- 7b. LOGO BELOW HEADING -->
-  <img src="images/logo.jpeg" alt="M Fragrance Logo" style="width:120px; margin:15px 0;">
-  
-  <!-- ADDED: Last Visit Bar -->
-  <div id="lastVisited" style="text-align:center; font-size:0.9rem; color:#4d3319; background:#fff8f0; padding:10px 0; font-weight:bold; border-bottom:1px solid #e0d3c3;"></div>
 
-<!-- 4c. HERO IMAGE -->
 <section class="hero">
-   <h2>Luxury Fragrances at Affordable Prices</h2>
-   <!-- FIXED: added missing quote -->
-   <img src="images/hero.jpeg" alt="Hero" width="500 height="333">
+<!-- CRITICAL PERFORMANCE FIX: Compress this banner to <200KB and 1200px wide max -->
+<img src="banner-1200.jpg" alt="M Fragrance luxury perfume bottles on display" width="1200" height="600" loading="eager" decoding="async">
+<h1>Luxury Fragrances at Affordable Prices</h1>
+<p>Welcome to M Fragrance - Your home of authentic perfumes</p>
 </section>
 
-<!-- 4d. MAIN -->
-<main>
-   <h2>About M Fragrance</h2>
-
-   <p class="about-paragraph">
-      M Fragrance is a small, independently owned perfume business based in Olivenhoutbosch,
-      started by Portia Malatji with a simple goal: to make premium-quality scents accessible
-      to everyday customers without the markup charged by big-name fragrance houses. What began
-      as a hobby of experimenting with oil blends in a home kitchen has grown into a small
-      production line that now supplies body sprays, hand lotion, perfumes, and
-      scented lotions to customers across the local area and beyond. Every bottle is mixed,
-      tested, and packaged by hand, which means the team can adjust concentration and scent
-      strength based on direct customer feedback rather than mass-market averages.
-   </p>
-
-   <p class="about-paragraph">
-      The product range is built around a few signature notes rather than dozens of forgettable
-      options. Coco Vanilla, a warm blend of coconut and vanilla suited to evening wear, has
-      become the brand's best-selling scent since launch. Saad, a woodier and more amber-forward
-      fragrance aimed at men, sits alongside lighter everyday options like the Body Spray and
-      Hand Lotion lines for customers who want a subtle, all-day scent rather than something
-      designed for a night out. New customers are encouraged to start with the sample-size
-      bottles before committing to a full 80ml purchase, since fragrance preference is such a
-      personal thing.
-   </p>
-
-   <p class="about-paragraph">
-      <span style="color:#c0392b; font-weight:bold;">Special offer: new customers get 15% off their first order this month</span>
-      when they register through the Registration page and mention the promotion at checkout.
-      Beyond the products themselves, M Fragrance is built on personal service: every order is
-      confirmed directly with the customer, delivery timelines are communicated honestly rather
-      than guessed at, and the team is always happy to recommend a scent based on what a
-      customer already wears and likes. Whether the goal is a daily signature scent or a gift
-      for someone else, the Products page below has full details, and the Contact page has
-      everything needed to reach the team directly.
-   </p>
-
-</main>
-
-<!-- SCROLLING GALLERY -->
-<section class="gallery-section">
-   <h2>Our Fragrance Collection</h2>
-   <div class="gallery">
-      <img src="images/coco vanilla.jpeg" alt="Coco Vanilla" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/saad.jpeg" alt="Saad" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/body spray.jpeg" alt="Body Spray" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/hand lotion.jpeg" alt="Hand Lotion" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/gorgeous girl.jpeg" alt="Gorgeous Girl" onclick="openLightbox(this.src, this.alt)" width="250" height="250">
-      <img src="images/ombrex.jpeg" alt="Ombrex" onclick="openLightbox(this.src, this.alt)" width="220" height="250">
-   </div>
+<section class="about">
+<h2>About M Fragrance</h2>
+<p>M Fragrance is a small, independently owned fragrance company based in South Africa. We believe everyone deserves to smell amazing without breaking the bank. Discover our collection of long-lasting scents for men and women.</p>
 </section>
 
-<!-- LIGHTBOX POPUP -->
-<div id="lightbox" onclick="closeLightbox()">
-   <span class="close" onclick="closeLightbox()">&times;</span>
-   <img id="lightbox-img" alt="Enlarged View" onclick="event.stopPropagation()">
-   <div id="lightboxCaption"></div>
-</div>
-
-<!-- FOOTER -->
 <footer>
-   <p>&copy; 2026 M Fragrance. All Rights Reserved.
-      <a class="tel-link" href="tel:+27765568256">📞 +27 76 556 8256</a> |
-      <a href="mailto:mohaumia@gmail.com">✉ mohaumia@gmail.com</a>
-   </p>
+<p>&copy; 2026 M Fragrance. All Rights Reserved.</p>
 </footer>
-
-<script>
-// ADDED: LAST VISIT CODE
-window.addEventListener('DOMContentLoaded', () => {
-  const lastVisitedDiv = document.getElementById('lastVisited');
-  const lastVisit = localStorage.getItem('mf_lastVisit');
-
-  if(lastVisit){
-    const date = new Date(lastVisit);
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit' };
-    lastVisitedDiv.textContent = `Welcome back! Your last visit was on: ${date.toLocaleDateString('en-ZA', options)}`;
-  } else {
-    lastVisitedDiv.textContent = `Welcome to M Fragrance! This is your first visit.`;
-  }
-  localStorage.setItem('mf_lastVisit', new Date().toISOString());
-});
-
-// YOUR EXISTING SCRIPT
-function openLightbox(src, alt){
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const caption = document.getElementById('lightboxCaption');
-  lightboxImg.src = src;
-  lightboxImg.alt = alt;
-  caption.textContent = alt;
-  lightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox(){
-  document.getElementById('lightbox').style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') closeLightbox();
-});
-</script>
 </body>
 </html>
