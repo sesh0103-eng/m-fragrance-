@@ -7,8 +7,8 @@
 <meta name="theme-color" content="#4d3319">
 <meta name="referrer" content="no-referrer">
 <title>M Fragrance | Contact Us - Pretoria, South Africa</title>
-<meta name="description" content="Contact M Fragrance in Pretoria. Call 079 000 0296, email info@mfragrance.co.za or visit our store. Business hours Mon-Fri 9am-5pm.">
-<meta name="keywords" content="M Fragrance contact, perfume store Pretoria, M Fragrance phone number, address">
+<meta name="description" content="Contact M Fragrance in Pretoria. Call 079 000 0296, email info@mfragrance.co.za or visit our store at 123 Mopani Crescent. Business hours Mon-Fri 9am-5pm.">
+<meta name="keywords" content="M Fragrance contact, perfume store Pretoria, M Fragrance phone number, address, contact us">
 <meta name="author" content="Sharon Seshwene">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -26,7 +26,9 @@ h1{text-align:center;color:#4d3319;margin-bottom:30px;font-size:32px}
 .contact-info p{margin:10px 0}
 .contact-info a{color:#4d3319;text-decoration:none;font-weight:700}
 .contact-info a:hover{text-decoration:underline}
-.map-container{border-radius:10px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,.1);min-height:350px;background:#e0e0e0;display:flex;align-items:center;justify-content:center;color:#666}
+.map-container{border-radius:10px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,.1)}
+.map-container img{width:100%;height:auto;display:block;transition:.3s}
+.map-container img:hover{opacity:.9}
 footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:40px}
 </style>
 </head>
@@ -45,7 +47,7 @@ footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:4
 </header>
 
 <main>
-<h1>Contact Us</h1>
+<h1>Contact M Fragrance</h1> <!-- SEO fix: more keywords in H1 -->
 <div class="contact-container">
 
 <div class="contact-info">
@@ -53,15 +55,17 @@ footer{text-align:center;padding:20px;background:#4d3319;color:#fff;margin-top:4
 <p><strong>Phone:</strong> <a href="tel:0790000296" aria-label="Call M Fragrance at 079 000 0296">079 000 0296</a></p>
 <p><strong>Email:</strong> <a href="mailto:info@mfragrance.co.za" aria-label="Email M Fragrance">info@mfragrance.co.za</a></p>
 <p><strong>Address:</strong> 123 Mopani Crescent, Pretoria, 0001, South Africa</p>
-<p><strong>Find us on:</strong> <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Google Maps</a></p>
 <h2 style="margin-top:20px">Business Hours</h2>
 <p><strong>Mon-Fri:</strong> 09:00 - 17:00</p>
 <p><strong>Saturday:</strong> 09:00 - 13:00</p>
 <p><strong>Sunday:</strong> Closed</p>
 </div>
 
-<div class="map-container" id="map">
-Loading map...
+<div class="map-container">
+<a href="https://maps.google.com/?q=123+Mopani+Crescent+Pretoria" target="_blank" rel="noopener noreferrer" aria-label="Open M Fragrance location in Google Maps">
+<img src="map-placeholder-500.jpg" alt="Map showing M Fragrance location at 123 Mopani Crescent, Pretoria" width="500" height="350" loading="lazy">
+</a>
+<p style="text-align:center;padding:10px;font-size:14px">Click map to open in Google Maps</p>
 </div>
 
 </div>
@@ -70,12 +74,5 @@ Loading map...
 <footer>
 <p>&copy; 2026 M Fragrance. All Rights Reserved.</p>
 </footer>
-
-<script>
-// PERFORMANCE FIX: Load map only after page loads
-window.addEventListener('load', function() {
-document.getElementById('map').innerHTML = '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14365.123456!2d28.123456!3d-25.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA3JzI0LjQiUyAyOMKwMDcnMjQuNCJF!5e0!3m2!1sen!2sza!4v1234567890" title="M Fragrance location map in Pretoria" width="100%" height="350" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
-});
-</script>
 </body>
 </html>
